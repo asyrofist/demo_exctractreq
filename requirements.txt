@@ -1,4 +1,4 @@
-extractreq
+extractreq==0.0.4
 tabulate
 spacy
 pywsd==1.1.0
