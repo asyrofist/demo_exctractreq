@@ -6,4 +6,5 @@ graphviz
 XlsxWriter
 sklearn
 stanfordcorenlp
-nltk<=3.2.5
+nltk==3.2.5
+lemminflect==0.2.1
