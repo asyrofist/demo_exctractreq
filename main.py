@@ -2,6 +2,7 @@ import nltk
 nltk.download('stopwords')
 
 import streamlit as st
+from spacy.lang.en import English
 from extractreq.modul_ekspart import partOf, pd
 from extractreq.modul_spacySent import spacyClause, spacy#, spacy_param
 
@@ -20,8 +21,7 @@ if dataset1 is not None:
      data_kedua = part1.tabulasi_kedua(data_pertama)
      data_stat = part1.nilai_stat(data_pertama, data_kedua)
 
-
-     nlp = spacy.load('en_core_web_sm')
+     nlp = English()
      data_spacy = []
      for idx, num in zip(dataReq['ID'], dataReq['Requirement Statement']):
           doc = nlp(num)
