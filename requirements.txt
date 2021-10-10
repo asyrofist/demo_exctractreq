@@ -6,3 +6,4 @@ graphviz
 XlsxWriter
 sklearn
 stanfordcorenlp
+nltk<=3.2.5
