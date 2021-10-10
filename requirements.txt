@@ -4,3 +4,4 @@ spacy
 pywsd==1.1.0
 graphviz
 XlsxWriter
+sklearn
