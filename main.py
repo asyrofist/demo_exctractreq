@@ -4,7 +4,7 @@ nltk.download('stopwords')
 import streamlit as st
 import spacy_streamlit
 from extractreq.modul_ekspart import partOf, pd
-from extractreq.modul_spacySent import spacyClause #, spacy#, spacy_param
+from extractreq.modul_spacySent import spacyClause, spacy#, spacy_param
 
 st.header("Ekspart Module")
 st.markdown("Modul usulan ini digunakan untuk melihat kebergantungan kebutuhan berdasarkan ekspart")
@@ -21,7 +21,7 @@ if dataset1 is not None:
      data_kedua = part1.tabulasi_kedua(data_pertama)
      data_stat = part1.nilai_stat(data_pertama, data_kedua)
 
-     nlp = spacy_streamlit.load("en_core_web_sm")
+     nlp = spacy.load("en_core_web_sm")
      data_spacy = []
      for idx, num in zip(dataReq['ID'], dataReq['Requirement Statement']):
           doc = nlp(num)
