@@ -1,6 +1,7 @@
 extractreq==0.0.4
 tabulate
 spacy
+spacy-streamlit
 pywsd==1.1.0
 graphviz
 XlsxWriter
