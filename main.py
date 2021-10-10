@@ -1,3 +1,6 @@
+import nltk
+nltk.download('stopwords')
+
 import streamlit as st
 from extractreq.modul_ekspart import partOf, pd
 from extractreq.modul_spacySent import spacyClause, spacy, spacy_param
