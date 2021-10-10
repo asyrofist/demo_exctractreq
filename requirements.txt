@@ -1,6 +1,6 @@
 extractreq==0.0.4
 tabulate
-spacy
+spacy==2.2.0
 spacy-streamlit
 pywsd==1.1.0
 graphviz
