@@ -35,11 +35,9 @@ if 'ekscase' in metode:
                data_ucd = [MyucdReq.change_case(num) for num in useCaseTable.name]
                tbl_4 = useCaseMeasurement(freqs.aksi, ucd1.dropna().aksi)
                tbl_4.index= freqs.id
-               tbl_4.columns= ucd1.dropna().id
                
                tbl_5 = useCaseMeasurement(freqs.aksi, ucd2.dropna().aksi)
                tbl_5.index= freqs.id
-               tbl_5.columns= ucd2.dropna().id
                
                tbl_6 = useCaseMeasurement(freqs.aksi, data_ucd)
                tbl_6.index= freqs.id
@@ -62,10 +60,13 @@ if 'ekscase' in metode:
           elif 'keempat' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
                st.table(useCaseTable)
           elif 'tabel1' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
+               st.header("tabulasi antara freqs dan ucd1 (usecase)")
                st.table(tbl_4)
           elif 'tabel2' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
+               st.header("tabulasi antara freqs dan ucd2 (usecase)")
                st.table(tbl_5)
           elif 'tabel3' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
+               st.header("tabulasi antara freqs dan usecase (XMI)")
                st.table(tbl_6)
           else:
                st.warning("masukkan data terlebih dahulu")
