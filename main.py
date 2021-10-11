@@ -10,4 +10,3 @@ app = MultiApp()
 app.add_app("ekspart", ekspart.app) # Add all your application here
 app.add_app("ekscase", ekscase.app)
 app.run() # The main app
-app.__del__()
