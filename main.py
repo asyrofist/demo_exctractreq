@@ -1,3 +1,6 @@
+import nltk
+nltk.download('stopwords')
+
 import streamlit as st
 from google.protobuf.descriptor import MethodDescriptor
 from apps.multiapp import MultiApp
