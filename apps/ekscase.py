@@ -32,13 +32,10 @@ def app():
             data_ucd = [MyucdReq.change_case(num) for num in useCaseTable.name]
             tbl_4 = useCaseMeasurement(freqs.aksi, ucd1.dropna().aksi)
             tbl_4.index = freqs.id
-            tbl_4.columns = ucd1.dropna().usecase
             tbl_5 = useCaseMeasurement(freqs.aksi, ucd2.dropna().aksi)
             tbl_5.index = freqs.id
-            tbl_5.columns = ucd1.dropna().usecase
             tbl_6 = useCaseMeasurement(freqs.aksi, data_ucd)
             tbl_6.index = freqs.id
-            tbl_6.columns = useCaseTable.name
 
         elif dataset1 is None:
             st.warning("masukkan data aksi_aktor.xlsx terlebih dahulu..")
