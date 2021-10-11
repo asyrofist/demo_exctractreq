@@ -1,4 +1,4 @@
-extractreq==0.0.4
+extractreq==0.0.9
 tabulate
 spacy==2.2.0
 spacy-streamlit
