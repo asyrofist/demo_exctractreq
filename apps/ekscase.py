@@ -29,19 +29,6 @@ def app():
             ucd2 = MyucdReq.fulldataset('tabel_ucd2') # data dari txt
             useCaseTable  = MyucdReq.fulldataset_xmi('tabel_usecase') # dari xmi
 
-            tbl_1 = MyucdReq.ucdMeasurement(freqs.aksi, ucd1.dropna().aksi)
-#             tbl_1.columns = ucd1.dropna().usecase # kalkulasi tabel 1
-            tbl_1.index = freqs.id
-
-            tbl_2 = MyucdReq.ucdMeasurement(freqs.aksi, ucd2.dropna().aksi)
-#             tbl_2.columns = ucd2.dropna().usecase # kalkulasi tabel 2
-            tbl_2.index = freqs.id
-
-            data_ucd = [MyucdReq.change_case(num) for num in useCaseTable.name]
-            tbl_1x = MyucdReq.ucdMeasurement(freqs.aksi, data_ucd)
-            tbl_1x.index = freqs.id # kalkulasi tabel 3
-#             tbl_1x.columns = useCaseTable.name
-
             tbl_4 = useCaseMeasurement(freqs.aksi, ucd1.dropna().aksi, freqs.id, ucd1.dropna().usecase)
             tbl_5 = useCaseMeasurement(freqs.aksi, ucd2.dropna().aksi, freqs.id, ucd2.dropna().usecase)
             tbl_6 = useCaseMeasurement(freqs.aksi, data_ucd, freqs.id, useCaseTable.name)
@@ -53,7 +40,7 @@ def app():
             st.warning("masukkan data xmi.xslsx juga..")
 
         tabulasi_ucdreq = st.selectbox( 'pilihan tabel?', ['pertama', 'kedua', 'ketiga', 'keempat', 
-        'tabel1', 'tabel2', 'tabel3', 'tabel4', 'table5', 'table6'])
+        'wsd1', 'wsd2', 'wsd3'])
         if 'pertama' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
             st.table(freqs)
         elif 'kedua' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
@@ -62,17 +49,11 @@ def app():
             st.table(ucd2)
         elif 'keempat' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
             st.table(useCaseTable)
-        elif 'tabel1' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
-            st.table(tbl_1)
-        elif 'tabel2' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
-            st.table(tbl_2)
-        elif 'tabel3' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
-            st.table(tbl_1x)
-        elif 'tabel4' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
+        elif 'wsd1' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
             st.table(tbl_4)
-        elif 'tabel5' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
+        elif 'wsd2' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
             st.table(tbl_5)
-        elif 'tabel6' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
+        elif 'wsd3' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
             st.table(tbl_6)
         else:
             st.warning("masukkan data terlebih dahulu")
