@@ -28,10 +28,11 @@ def app():
             ucd1 = MyucdReq.fulldataset('tabel_ucd1') # data dari txt
             ucd2 = MyucdReq.fulldataset('tabel_ucd2') # data dari txt
             useCaseTable  = MyucdReq.fulldataset_xmi('tabel_usecase') # dari xmi
-
-            tbl_4 = useCaseMeasurement(freqs.aksi, ucd1.dropna().aksi, freqs.id, ucd1.dropna().usecase.uniqe())
-            tbl_5 = useCaseMeasurement(freqs.aksi, ucd2.dropna().aksi, freqs.id, ucd2.dropna().usecase.unique())
-            tbl_6 = useCaseMeasurement(freqs.aksi, data_ucd, freqs.id, useCaseTable.name.unique())
+               
+            data_ucd = [MyucdReq.change_case(num) for num in useCaseTable.name]
+            tbl_4 = useCaseMeasurement(freqs.aksi, ucd1.dropna().aksi, freqs.id)
+            tbl_5 = useCaseMeasurement(freqs.aksi, ucd2.dropna().aksi, freqs.id)
+            tbl_6 = useCaseMeasurement(freqs.aksi, data_ucd, freqs.id)
 
         elif dataset1 is None:
             st.warning("masukkan data aksi_aktor.xlsx terlebih dahulu..")
