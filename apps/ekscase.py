@@ -4,6 +4,9 @@ from extractreq.usecase_modul2 import parsingRequirement
 from extractreq.usecase_modul3 import ucdReq
 from pywsd.cosine import cosine_similarity
 
+import nltk
+nltk.download('stopwords')
+
 def useCaseMeasurement(keyword1, keyword2, id1, id2):
      hasil_wsd = [[cosine_similarity(num, angka) for angka in keyword2] for num in keyword1]
      df = pd.DataFrame(hasil_wsd, index= id1, columns= id2)
