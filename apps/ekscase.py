@@ -3,8 +3,8 @@ nltk.download('stopwords')
 
 import streamlit as st
 from extractreq.usecase_modul1 import xmlParser, pd
-from extractreq.usecase_modul2 import parsingRequirement
-from extractreq.usecase_modul3 import ucdReq
+from extractreq.usecase_modul2 import parsingRequirement, pd
+from extractreq.usecase_modul3 import ucdReq, pd
 from pywsd.cosine import cosine_similarity
 
 def useCaseMeasurement(keyword1, keyword2):
