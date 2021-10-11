@@ -1,8 +1,9 @@
-import streamlit as st, nltk
+import streamlit as st
 from google.protobuf.descriptor import MethodDescriptor
 from apps.multiapp import MultiApp
 from apps import ekscase, ekspart # import your app modules here
 
+import nltk
 nltk.download('stopwords')
 app = MultiApp()
 
