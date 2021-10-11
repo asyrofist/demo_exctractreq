@@ -30,17 +30,17 @@ def app():
             useCaseTable  = MyucdReq.fulldataset_xmi('tabel_usecase') # dari xmi
 
             tbl_1 = MyucdReq.ucdMeasurement(freqs.aksi, ucd1.dropna().aksi)
-            tbl_1.columns = ucd1.dropna().usecase # kalkulasi tabel 1
+#             tbl_1.columns = ucd1.dropna().usecase # kalkulasi tabel 1
             tbl_1.index = freqs.id
 
             tbl_2 = MyucdReq.ucdMeasurement(freqs.aksi, ucd2.dropna().aksi)
-            tbl_2.columns = ucd2.dropna().usecase # kalkulasi tabel 2
+#             tbl_2.columns = ucd2.dropna().usecase # kalkulasi tabel 2
             tbl_2.index = freqs.id
 
             data_ucd = [MyucdReq.change_case(num) for num in useCaseTable.name]
             tbl_1x = MyucdReq.ucdMeasurement(freqs.aksi, data_ucd)
             tbl_1x.index = freqs.id # kalkulasi tabel 3
-            tbl_1x.columns = useCaseTable.name
+#             tbl_1x.columns = useCaseTable.name
 
             tbl_4 = useCaseMeasurement(freqs.aksi, ucd1.dropna().aksi, freqs.id, ucd1.dropna().usecase)
             tbl_5 = useCaseMeasurement(freqs.aksi, ucd2.dropna().aksi, freqs.id, ucd2.dropna().usecase)
