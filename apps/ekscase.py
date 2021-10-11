@@ -7,9 +7,9 @@ from extractreq.usecase_modul2 import parsingRequirement
 from extractreq.usecase_modul3 import ucdReq
 from pywsd.cosine import cosine_similarity
 
-def useCaseMeasurement(keyword1, keyword2, id1, id2):
+def useCaseMeasurement(keyword1, keyword2):
      hasil_wsd = [[cosine_similarity(num, angka) for angka in keyword2] for num in keyword1]
-     df = pd.DataFrame(hasil_wsd, index= id1, columns= id2)
+     df = pd.DataFrame(hasil_wsd)
      return df
 
 def app():
@@ -30,9 +30,9 @@ def app():
             useCaseTable  = MyucdReq.fulldataset_xmi('tabel_usecase') # dari xmi
                
             data_ucd = [MyucdReq.change_case(num) for num in useCaseTable.name]
-            tbl_4 = useCaseMeasurement(freqs.aksi, ucd1.dropna().aksi, freqs.id)
-            tbl_5 = useCaseMeasurement(freqs.aksi, ucd2.dropna().aksi, freqs.id)
-            tbl_6 = useCaseMeasurement(freqs.aksi, data_ucd, freqs.id)
+            tbl_4 = useCaseMeasurement(freqs.aksi, ucd1.dropna().aksi)
+            tbl_5 = useCaseMeasurement(freqs.aksi, ucd2.dropna().aksi)
+            tbl_6 = useCaseMeasurement(freqs.aksi, data_ucd)
 
         elif dataset1 is None:
             st.warning("masukkan data aksi_aktor.xlsx terlebih dahulu..")
