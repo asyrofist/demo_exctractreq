@@ -45,3 +45,6 @@ class MultiApp:
             format_func=lambda app: app['title'])
 
         app['function']()
+    
+    def __del__(self):
+        pass
