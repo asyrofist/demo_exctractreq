@@ -60,13 +60,16 @@ if 'ekscase' in metode:
           elif 'keempat' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
                st.table(useCaseTable)
           elif 'tabel1' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
-               st.header("tabulasi antara freqs dan ucd1 (usecase)")
+               st.subheader("tabulasi antara freqs dan ucd1 (usecase)")
+               st.markdown("Perbandingan antara kebutuhan freqs dan usecase ucd1")
                st.table(tbl_4)
           elif 'tabel2' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
-               st.header("tabulasi antara freqs dan ucd2 (usecase)")
+               st.subheader("tabulasi antara freqs dan ucd2 (usecase)")
+               st.markdown("Perbandingan antara kebutuhan freqs dan usecase ucd2")
                st.table(tbl_5)
           elif 'tabel3' in tabulasi_ucdreq and dataset1 and dataset2 is not None:
-               st.header("tabulasi antara freqs dan usecase (XMI)")
+               st.subheader("tabulasi antara freqs dan usecase (XMI)")
+               st.markdown("Perbandingan antara kebutuhan freqs dan usecase XMI")
                st.table(tbl_6)
           else:
                st.warning("masukkan data terlebih dahulu")
