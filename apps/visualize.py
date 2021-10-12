@@ -3,8 +3,8 @@ from streamlit_pandas_profiling import st_profile_report
 from extractreq.modul_ekspart import partOf, pd
 
 def app():
-    st.header("Ekspart Module")
-    st.markdown("Modul usulan ini digunakan untuk melihat kebergantungan kebutuhan berdasarkan ekspart")
+    st.header("Visualize Statistic Module")
+    st.markdown("Modul ini digunakan untuk mengolah data secara statistik")
 
     dataset1 = st.file_uploader("Choose a file", key= 'ekspart') 
     if dataset1 is None:
