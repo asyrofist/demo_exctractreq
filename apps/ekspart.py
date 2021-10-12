@@ -18,7 +18,6 @@ def app():
 
         part1 = partOf(dataset1) # manual data
         dataReq = part1.fulldataset(srs_param)
-        part1.__del__() 
 
         ml_mode = st.sidebar.selectbox( 'pilihan mode?', ['manual', 'spacy', 'stanford'])
         if 'stanford' in ml_mode:
@@ -34,6 +33,8 @@ def app():
 
         data_kedua = part1.tabulasi_kedua(data_pertama)
         data_stat = part1.nilai_stat(data_pertama, data_kedua)
+        part1.__del__() 
+
         srs_param = st.sidebar.selectbox( 'tabulasi?', ['pertama', 'kedua', 'stat'])
         if 'pertama' in srs_param:
             st.table(data_pertama)
