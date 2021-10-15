@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st, graphviz as graphviz
 from extractreq.modul_ekspart import partOf, pd
 from extractreq.modul_spacySent import spacyClause, id_param, col_param
 from extractreq.modul_stanfordSent import stanford_clause, id_param, col_param
