@@ -12,5 +12,5 @@ lemminflect==0.2.1
 openpyxl
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz
 streamlit-pandas-profiling
-tracereq==0.0.3
+tracereq==0.0.5
 py-automl
